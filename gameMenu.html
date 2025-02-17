@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Menu</title>
+    <style>
+        /* Pr�klad �t�lov pre str�nku */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #gameImage {
+            width: 1000px;
+            height: auto;
+        }
+
+        #barImage {
+            max-width: 40%;
+            height: auto;
+    </style>
+    <header class="navbar">
+        <a href="gameMenu.html">
+            <img id="barImage" src="assets/images/MG.png" alt="MG Logo">
+        </a>
+        <nav class="nav-links">
+            <div class="menu-item">
+                <a href="#" id="profile-link">
+                    <img src="assets/images/profile.png" alt="Profile" class="profile-img">
+                    <span>Profile</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="profile.html">
+                        <img src="assets/images/GoToProfile.png" alt="Go to Profile" class="icon">
+                        <span>Go to Profile</span>
+                    </a>
+                    <a href="changrAccount.html">
+                        <img src="assets/images/ChangeAccount.png" alt="Change Account" class="icon">
+                        <span>Change Account</span>
+                    </a>
+                    <a href="index.html" onclick="logOut(); return false;">
+                        <img src="assets/images/LogOut.png" alt="Log Out" class="icon">
+                        <span>Log Out</span>
+                    </a>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+</head>
+<body>
+
+    <!-- Zobrazi� obr�zok namiesto textu -->
+    <img id="gameImage" src="assets/images/MinecraftGuess.png" alt="Minecraft Guess Game">
+    <div id="welcomeMessage" class="welcome">Welcome <span id="usernameDisplay"></span>!</div>
+    <button id="blocksButton">Block Game</button>
+    <button id="mobsButton">Mob Game</button>
+    <button id="itemsButton">Item Game</button>
+
+    <script>
+        // Skontrolujeme, �i je pou��vate� prihl�sen�
+        const currentUser = localStorage.getItem('currentUser');
+
+        if (!currentUser) {
+            // Ak pou��vate� nie je prihl�sen�, presmerujeme ho na login str�nku
+            window.location.href = 'login.html';  // Nahrad�te spr�vnou cestou k va�ej login str�nke
+        } else {
+            // Ak je prihl�sen�, zobraz�me priv�tanie s menom pou��vate�a
+            document.getElementById('welcomeMessage').innerText = Welcome ${ currentUser } !;
+        }
+
+        // Akcie po kliknut� na tla�idl�
+        document.getElementById('blocksButton').addEventListener('click', () => {
+            window.location.href = 'blockGame.html'; // Presmerovanie na Block Game
+        });
+
+        document.getElementById('mobsButton').addEventListener('click', () => {
+            window.location.href = 'mobGame.html'; // Presmerovanie na Mob Game
+        });
+
+        document.getElementById('itemsButton').addEventListener('click', () => {
+            window.location.href = 'itemGame.html'; // Presmerovanie na Item Game
+        });
+    </script>
+
+</body>
+</html>

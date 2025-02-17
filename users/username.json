@@ -1,0 +1,7 @@
+{
+    "username": "user1",
+    "password": "hashed_password",
+    "achievements": [ "Block Game Level 1", "Mobs Game Level 2" ],
+    "profilePicture": "profile1.jpg",
+    "banner": "banner1.jpg"
+}

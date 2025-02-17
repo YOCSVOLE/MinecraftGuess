@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none; /* Error message will be hidden until needed */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+
+        <form id="loginForm">
+            <h4 <label for="username">Username:</label></h4>
+            <input type="text" id="username" placeholder="Enter username" required>
+            <span id="usernameError" class="error-message">This field is required!</span>
+
+            <h4 <label for="password">Password:</label></h4>
+            <input type="password" id="password" placeholder="Enter password" required>
+            <span id="passwordError" class="error-message">This field is required!</span>
+
+            <button type="submit" id="loginButton">Login</button>
+        </form>
+
+        <a href="#" id="createAccountLink">Create an account</a>
+    </div>
+
+    <!-- Register form hidden by default -->
+    <div class="register-container" id="registerContainer" style="display:none;">
+        <h2>Create a new account</h2>
+        <form id="registerForm">
+            <h4 <label for="newUsername">Username:</label></h4>
+            <input type="text" id="newUsername" placeholder="Enter new username" required>
+            <span id="newUsernameError" class="error-message">This field is required!</span>
+
+            <h4 <label for="newPassword">Password:</label></h4>
+            <input type="password" id="newPassword" placeholder="Enter new password" required>
+            <span id="newPasswordError" class="error-message">This field is required!</span>
+
+            <button type="submit" id="createAccountButton">Create account</button>
+        </form>
+
+        <a href="#" id="backToLoginLink">Back to login</a>
+    </div>
+
+    <script src="assets/scripts/auth.js"></script>
+</body>
+</html>
